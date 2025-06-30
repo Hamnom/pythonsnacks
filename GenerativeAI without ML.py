@@ -1,10 +1,22 @@
-from diffusers import StableDiffusionPipeline
-import torch
+import random
 
-pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5")
-pipe = pipe.to("cuda")  # or "cpu" if no GPU
+templates = [
+    "The quick {adj} fox jumps over the {noun}.",
+    "A {adj} {noun} loves to {verb} all day."
+]
 
-prompt = "A futuristic cityscape at sunset"
-image = pipe(prompt).images[0]
+words = {
+    "adj": ["lazy", "bright", "happy"],
+    "noun": ["dog", "moon", "hill"],
+    "verb": ["run", "jump", "sleep"]
+}
 
-image.show()
+def generate_sentence():
+    template = random.choice(templates)
+    return template.format(
+        adj=random.choice(words["adj"]),
+        noun=random.choice(words["noun"]),
+        verb=random.choice(words["verb"])
+    )
+
+print(generate_sentence())

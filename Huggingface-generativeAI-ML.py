@@ -1,5 +1,5 @@
 from transformers import pipeline
-
+#pip install transformers
 generator = pipeline('text-generation', model='gpt2')
 
 prompt = "In the future, AI will"
