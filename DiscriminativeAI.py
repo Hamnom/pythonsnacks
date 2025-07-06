@@ -1,10 +1,9 @@
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 '''
-First run these on your terminal
+First run these commands on terminal
 pip install numpy
 pip install scipy
-then 
 pip install scikit-learn
 '''
 
