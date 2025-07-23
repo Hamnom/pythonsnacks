@@ -1,6 +1,7 @@
-from string import Template
+from string.templatelib import Template
 
-template = Template("$country has $count states.")
-output = template.substitute(country="United States", count=50)
-
+country = "United States"
+count = 50
+output = t"{country} has {count} states!"
+#assert isinstance(welcome_message, Template)
 print(output)
